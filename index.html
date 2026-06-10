@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarvesh Sharma — Portfolio</title>
+  <meta name="description" content="Explore Sarvesh Sharma's portfolio designed in a premium Netflix style. Built as an interactive single-page application with persona-tailored dashboards and dedicated sections.">
+  <meta name="author" content="Sarvesh Sharma">
+  <meta property="og:title" content="Sarvesh Sharma — Netflix-Style Portfolio">
+  <meta property="og:description" content="An interactive client-side routed portfolio showcasing cybersecurity skills, backend projects, verified certifications, and hackathon experiences.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="profile-active">
+
+  <!-- ========== NAVBAR / HEADER ========== -->
+  <header class="navbar-wrapper" id="navbarWrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#/profile" class="nav-logo" id="navLogo">SARVESH<span>.NET</span></a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="#/profile" class="nav-link" id="navLink-home">Home</a></li>
+        <li class="nav-item"><a href="#/projects" class="nav-link" id="navLink-projects">Projects</a></li>
+        <li class="nav-item"><a href="#/skills" class="nav-link" id="navLink-skills">Skills</a></li>
+        <li class="nav-item"><a href="#/certifications" class="nav-link" id="navLink-certifications">Certifications</a></li>
+        <li class="nav-item"><a href="#/experience" class="nav-link" id="navLink-experience">Experience</a></li>
+        <li class="nav-item"><a href="#/academic" class="nav-link" id="navLink-academic">Academic</a></li>
+        <li class="nav-item"><a href="#/contact" class="nav-link" id="navLink-contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="#/browse" class="profile-nav-btn" id="profileNavBtn" title="Switch Profile">
+          <div class="profile-nav-avatar">
+            <img id="currentNavAvatar" src="assets/avatars/recruiter.png?v=2" alt="Active Profile">
+          </div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN SPA WRAPPER ========== -->
+  <main id="app">
+
+    <!-- 1. BROWSE PROFILE SELECTION VIEW -->
+    <div id="view-browse" class="route-view">
+      <div class="profile-overlay-container">
+        <h1 class="profile-title">Who's watching?</h1>
+        <div class="profile-list">
+          <a href="#/profile/recruiter" class="profile-card" id="card-recruiter">
+            <div class="profile-avatar-wrapper">
+              <img src="assets/avatars/recruiter.png?v=2" alt="Recruiter Avatar">
+            </div>
+            <span class="profile-name">Recruiter</span>
+          </a>
+          <a href="#/profile/developer" class="profile-card" id="card-developer">
+            <div class="profile-avatar-wrapper">
+              <img src="assets/avatars/developer.png?v=2" alt="Developer Avatar">
+            </div>
+            <span class="profile-name">Developer</span>
+          </a>
+          <a href="#/profile/stalker" class="profile-card" id="card-stalker">
+            <div class="profile-avatar-wrapper">
+              <img src="assets/avatars/stalker.png?v=2" alt="Stalker Avatar">
+            </div>
+            <span class="profile-name">Stalker</span>
+          </a>
+          <a href="#/profile/adventurer" class="profile-card" id="card-adventurer">
+            <div class="profile-avatar-wrapper">
+              <img src="assets/avatars/adventurer.png?v=2" alt="Adventurer Avatar">
+            </div>
+            <span class="profile-name">Adventurer</span>
+          </a>
+        </div>
+        <button class="profile-manage-btn">Manage Profiles</button>
+      </div>
+    </div>
+
+    <!-- 2. HOME / PROFILE DASHBOARD VIEW -->
+    <div id="view-profile" class="route-view">
+      <!-- Hero Billboard -->
+      <section class="billboard" id="homeBillboard">
+        <div class="billboard-visual-bg" style="background-image: url('assets/billboard_bg.png');"></div>
+        <div class="billboard-bg"></div>
+        <div class="billboard-content">
+          <h1 class="billboard-title" id="billboardTitle">SARVESH SHARMA</h1>
+          <div class="billboard-meta">
+            <span class="billboard-match">99% Match</span>
+            <span class="billboard-year">2026</span>
+            <span class="billboard-rating">VIT Bhopal</span>
+            <span class="billboard-hd">4K Ultra HD</span>
+          </div>
+          <p class="billboard-desc" id="billboardDesc">
+            Loading persona details...
+          </p>
+          <div class="billboard-buttons">
+            <a href="#/projects" class="btn-billboard play" id="billboardCtaPlay">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </a>
+            <a href="#/contact" class="btn-billboard info" id="billboardCtaInfo">
+              <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+              <span>Info</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Carousel Rows (Populated Dynamically via JS) -->
+      <div class="rows-container" id="dashboardRows">
+        <!-- JS will inject persona rows here dynamically -->
+      </div>
+    </div>
+
+    <!-- 3. PROJECTS GRID VIEW -->
+    <div id="view-projects" class="route-view subpage-container">
+      <h2 class="subpage-title">All Projects</h2>
+      <div class="subpage-grid">
+        
+        <!-- Project 1: PhishGuard -->
+        <div class="subpage-card">
+          <div class="card-visual" style="background: linear-gradient(135deg, #1e1b4b 0%, #311013 100%);">
+            <img src="https://i.giphy.com/JoYD67rMty3gSLhrdk.gif" alt="Phishing" class="gif-visual" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">AI Classification</span>
+            <h3 class="card-header-title">PhishGuard</h3>
+            <p class="card-text">AI-Based Phishing Detection Platform designed to audit and classify emails, URLs, and SMS content using machine learning classifications.</p>
+            <ul class="subpage-tech-tags">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>Scikit-Learn</li>
+              <li>NLP</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://github.com/Sharmadotcom" target="_blank" rel="noopener" class="btn-card primary">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Passify -->
+        <div class="subpage-card">
+          <div class="card-visual" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);">
+            <img src="https://i.giphy.com/zFBj4UsdDKX1uEO05l.gif" alt="Hacking" class="gif-visual" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Security Tool</span>
+            <h3 class="card-header-title">Passify</h3>
+            <p class="card-text">AES-encrypted password management tool displaying credentials health dashboards, secure session handling, strength meter generators, and compromised alerts.</p>
+            <ul class="subpage-tech-tags">
+              <li>Flask</li>
+              <li>PostgreSQL</li>
+              <li>AES-256</li>
+              <li>Cryptography</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://github.com/Sharmadotcom/Passify" target="_blank" rel="noopener" class="btn-card primary">GitHub</a>
+              <a href="https://passify-3rrk.onrender.com" target="_blank" rel="noopener" class="btn-card secondary">Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Commonwealth Bank Cybersecurity Simulation -->
+        <div class="subpage-card">
+          <div class="card-visual" style="background: linear-gradient(135deg, #111827 0%, #311013 100%);">
+            <img src="https://i.giphy.com/5htHKiASh8oYtpU1mb.gif" alt="Security" class="gif-visual" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Simulation Work</span>
+            <h3 class="card-header-title">CBA Cybersecurity</h3>
+            <p class="card-text">Simulated analyst operations including penetration testing audits, forensic logging, threat incident response setups, and team cybersecurity awareness strategy.</p>
+            <ul class="subpage-tech-tags">
+              <li>Incident Response</li>
+              <li>Pen Testing</li>
+              <li>Forage</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project 4: Deloitte Data Analytics Simulation -->
+        <div class="subpage-card">
+          <div class="card-visual" style="background: linear-gradient(135deg, #111827 0%, #064e3b 100%);">
+            <img src="https://i.giphy.com/nA7xqFVD1w5A7s69D9.gif" alt="Data Analytics" class="gif-visual" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Simulation Work</span>
+            <h3 class="card-header-title">Deloitte Data Analytics</h3>
+            <p class="card-text">Virtual simulation focusing on data modeling practices, SQL database queries, Tableau dashboard visuals, and presenting data stories to clients.</p>
+            <ul class="subpage-tech-tags">
+              <li>Data Analysis</li>
+              <li>Tableau</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. SKILLS SECTION VIEW -->
+    <div id="view-skills" class="route-view subpage-container">
+      <h2 class="subpage-title">Technical Mastery</h2>
+      <div class="skills-page-grid">
+        
+        <!-- Programming Languages -->
+        <div class="skills-page-card">
+          <h3 class="skills-card-title">Languages</h3>
+          <div class="skills-tags-container">
+            <span class="skill-tag-chip">Python</span>
+            <span class="skill-tag-chip">C++</span>
+            <span class="skill-tag-chip">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Security Specialization -->
+        <div class="skills-page-card">
+          <h3 class="skills-card-title">Cybersecurity</h3>
+          <div class="skills-tags-container">
+            <span class="skill-tag-chip">Network Security</span>
+            <span class="skill-tag-chip">Penetration Testing</span>
+            <span class="skill-tag-chip">Cryptography</span>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="skills-page-card">
+          <h3 class="skills-card-title">Backend &amp; Databases</h3>
+          <div class="skills-tags-container">
+            <span class="skill-tag-chip">Flask</span>
+            <span class="skill-tag-chip">Git &amp; Linux Operations</span>
+            <span class="skill-tag-chip">Data Structures</span>
+          </div>
+        </div>
+
+        <!-- Emerging Technologies -->
+        <div class="skills-page-card">
+          <h3 class="skills-card-title">AI &amp; Distributed Systems</h3>
+          <div class="skills-tags-container">
+            <span class="skill-tag-chip">Machine Learning (NLP)</span>
+            <span class="skill-tag-chip">AI Foundations</span>
+            <span class="skill-tag-chip">Blockchain Tech</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Also familiar tags -->
+      <div class="skills-page-tags">
+        <h3 class="tags-title">Additional Competencies</h3>
+        <div class="tags-container">
+          <span class="tag-chip">Splunk</span>
+          <span class="tag-chip">PostgreSQL</span>
+          <span class="tag-chip">SQLite</span>
+          <span class="tag-chip">HTML/CSS</span>
+          <span class="tag-chip">REST APIs</span>
+          <span class="tag-chip">Incident Response</span>
+          <span class="tag-chip">Digital Forensics</span>
+          <span class="tag-chip">Network Architecture</span>
+          <span class="tag-chip">Data Visualization</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CERTIFICATIONS GRID VIEW -->
+    <div id="view-certifications" class="route-view subpage-container">
+      <h2 class="subpage-title">Verified Credentials</h2>
+      <div class="subpage-grid">
+        
+        <!-- Cert 1: Google Cybersec (Link) -->
+        <div class="cert-card-grid" data-type="link" data-url="https://www.coursera.org/account/accomplishments/verify/4M9SIT8JZ96T">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/google-cybersec.jpg" alt="Google Cybersecurity Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Google · Coursera</span>
+            <h3 class="cert-card-title">Foundations of Cybersecurity</h3>
+            <p class="cert-desc">Verified knowledge in security governance, network defenses, and threat analysis models.</p>
+            <span class="cert-verify-link">Click to verify credential online ↗</span>
+          </div>
+        </div>
+
+        <!-- Cert 2: Google Networking (Link) -->
+        <div class="cert-card-grid" data-type="link" data-url="https://www.coursera.org/account/accomplishments/verify/Z5O4K1XO99QR">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/google-networking.jpg" alt="Google Networking Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Google · Coursera</span>
+            <h3 class="cert-card-title">The Bits and Bytes of Computer Networking</h3>
+            <p class="cert-desc">Verified knowledge in networking protocols (TCP/IP), DNS/DHCP structures, routing, and subnetting.</p>
+            <span class="cert-verify-link">Click to verify credential online ↗</span>
+          </div>
+        </div>
+
+        <!-- Cert 3: NPTEL Cyber Security (Modal) -->
+        <div class="cert-card-grid" data-type="modal" data-src="assets/certs/nptel-cybersec.png" data-title="NPTEL Cyber Security and Privacy">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/nptel-cybersec.png" alt="NPTEL Cyber Security Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">NPTEL · IIT Madras</span>
+            <h3 class="cert-card-title">Cyber Security and Privacy</h3>
+            <p class="cert-desc">Comprehensive certification on encryption systems, data compliance, threat management, and auditing policies.</p>
+            <span class="cert-verify-link">Click to view screenshot 👁️</span>
+          </div>
+        </div>
+
+        <!-- Cert 4: NPTEL Blockchain (Modal) -->
+        <div class="cert-card-grid" data-type="modal" data-src="assets/certs/nptel-blockchain.png" data-title="NPTEL Blockchain and its Applications">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/nptel-blockchain.png" alt="NPTEL Blockchain Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">NPTEL · IIT Kharagpur</span>
+            <h3 class="cert-card-title">Blockchain and its Applications</h3>
+            <p class="cert-desc">Certification covering smart contracts development, consensus protocols, hyperledgers, and application logic.</p>
+            <span class="cert-verify-link">Click to view screenshot 👁️</span>
+          </div>
+        </div>
+
+        <!-- Cert 5: Deloitte Data Analytics (Modal) -->
+        <div class="cert-card-grid" data-type="modal" data-src="assets/certs/deloitte-analytics.png" data-title="Deloitte Data Analytics Job Simulation">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/deloitte-analytics.png" alt="Deloitte Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Deloitte · Forage</span>
+            <h3 class="cert-card-title">Data Analytics Simulation</h3>
+            <p class="cert-desc">Completed business tasks on data modeling structures, data dashboards creation, and strategic insights.</p>
+            <span class="cert-verify-link">Click to view screenshot 👁️</span>
+          </div>
+        </div>
+
+        <!-- Cert 6: Commonwealth Bank Cybersecurity (Modal) -->
+        <div class="cert-card-grid" data-type="modal" data-src="assets/certs/forage-cybersec.jpg" data-title="Commonwealth Bank Introduction to Cybersecurity Job Simulation">
+          <div class="cert-img-wrapper">
+            <img src="assets/certs/forage-cybersec.jpg" alt="Commonwealth Bank Certificate">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">CBA · Forage</span>
+            <h3 class="cert-card-title">Introduction to Cybersecurity Simulation</h3>
+            <p class="cert-desc">Successfully simulated security tasks: log forensic analysis, auditing network systems, and incident reports.</p>
+            <span class="cert-verify-link">Click to view screenshot 👁️</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. EXPERIENCE / TIMELINE VIEW -->
+    <div id="view-experience" class="route-view subpage-container">
+      <h2 class="subpage-title">Chronological Experience</h2>
+      <div class="timeline-container">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-block">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content-card">
+            <span class="timeline-date">May 2026</span>
+            <h3 class="timeline-card-title">Cybersecurity Simulation</h3>
+            <h4 class="timeline-card-sub">Commonwealth Bank × Forage</h4>
+            <p class="timeline-card-text">
+              Conducted incident response setups, created mitigation actions for threat detections, analyzed system auditing logs, and structured penetration tests reports.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-block">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content-card">
+            <span class="timeline-date">2026</span>
+            <h3 class="timeline-card-title">Semi-Finalist</h3>
+            <h4 class="timeline-card-sub">ET-AI Hackathon 2026</h4>
+            <p class="timeline-card-text">
+              Proposed intelligent automation solutions. Formulated machine learning models, deploying classification logic to rank in the semi-final group among thousands of national entries.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-block">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content-card">
+            <span class="timeline-date">2026</span>
+            <h3 class="timeline-card-title">Data Analytics Simulation</h3>
+            <h4 class="timeline-card-sub">Deloitte × Forage</h4>
+            <p class="timeline-card-text">
+              Delivered data analytics solutions, queried relational structures with SQL, designed interactive story visualizations on Tableau dashboard dashboards, and presented recommendations to simulated business leads.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-block">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content-card">
+            <span class="timeline-date">2025</span>
+            <h3 class="timeline-card-title">National Participant</h3>
+            <h4 class="timeline-card-sub">Adobe India Hackathon</h4>
+            <p class="timeline-card-text">
+              Developed modern software prototypes, working with API pipelines and creative computing modules to build tools during the Adobe India Hackathon.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-block">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content-card">
+            <span class="timeline-date">2024 — 2028</span>
+            <h3 class="timeline-card-title">B.Tech in CSE (Cyber Security &amp; Forensics)</h3>
+            <h4 class="timeline-card-sub">VIT Bhopal University</h4>
+            <p class="timeline-card-text">
+              Academic student, focusing on advanced concepts of secure architectures, cryptography, digital forensics, operating systems, and database systems. Cumulative score: 8.31 / 10 CGPA.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- 8. ACADEMIC STATS VIEW -->
+    <div id="view-academic" class="route-view subpage-container">
+      <h2 class="subpage-title">Academic Records</h2>
+      <div class="academic-container">
+        
+        <div class="academic-hero-card" style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+          <div class="academic-stats-flex" style="flex: 1; min-width: 280px;">
+            <div class="academic-stat-box">
+              <span class="stat-number-big">8.31</span>
+              <span class="stat-label-big">VIT Bhopal CGPA</span>
+            </div>
+            <div class="academic-stat-box">
+              <span class="stat-number-big">6</span>
+              <span class="stat-label-big">Completed Certs</span>
+            </div>
+          </div>
+          <div class="academic-gif-box" style="width: 200px; height: 130px; border-radius: 6px; overflow: hidden; border: 1px solid var(--nf-dark-gray);">
+            <img src="https://i.giphy.com/leTqnzitgo5Unzm5Wd.gif" alt="Studying" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <div class="academic-details-grid">
+          
+          <div class="academic-card-detail">
+            <h3>Undergraduate Education</h3>
+            <p class="school-name">VIT Bhopal University</p>
+            <span class="school-date">2024 — 2028 | B.Tech CSE (Cyber Security &amp; Digital Forensics)</span>
+            <p class="school-desc">Major coursework: Cryptography, Computer Networks, Operating Systems, Database Management Systems, Data Structures &amp; Algorithms, Incident Response.</p>
+          </div>
+
+          <div class="academic-card-detail">
+            <h3>Senior Secondary (Class XII)</h3>
+            <p class="school-name">DAV Public School, Pune</p>
+            <span class="school-date">Graduated: 2024 | CBSE Science Stream</span>
+            <p class="school-desc">Acquired strong foundations in physics, chemistry, mathematics, and computer science concepts.</p>
+          </div>
+
+          <div class="academic-card-detail">
+            <h3>Secondary Education (Class X)</h3>
+            <p class="school-name">DAV Public School, Pune</p>
+            <span class="school-date">Completed: 2022 | CBSE Board</span>
+            <p class="school-desc">Gained fundamental training in sciences, history, math, and communication.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 9. MUSIC GRID VIEW -->
+    <div id="view-music" class="route-view subpage-container">
+      <h2 class="subpage-title">Coding Playlists</h2>
+      <div class="music-albums-grid">
+        
+        <div class="album-card">
+          <div class="album-cover" style="background: linear-gradient(135deg, #111827 0%, #1e1b4b 100%);">🎧</div>
+          <div class="album-details">
+            <h3 class="album-title">Cyberpunk Synthwave</h3>
+            <p class="album-artist">Electronic / Synth</p>
+            <span class="album-desc">High-tempo beats for deep-focus shell scripting and network penetration testing sessions.</span>
+          </div>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover" style="background: linear-gradient(135deg, #090d16 0%, #064e3b 100%);">🎵</div>
+          <div class="album-details">
+            <h3 class="album-title">Lo-Fi Coding Loops</h3>
+            <p class="album-artist">Chillhop / Instrumental</p>
+            <span class="album-desc">Relaxed background lo-fi tracks, ideal for debugging algorithms and documentation.</span>
+          </div>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover" style="background: linear-gradient(135deg, #111827 0%, #311013 100%);">🔊</div>
+          <div class="album-details">
+            <h3 class="album-title">Dark Ambient Drone</h3>
+            <p class="album-artist">Ambient / Atmospheric</p>
+            <span class="album-desc">Immersive and non-distracting atmospheric soundscapes for reading technical documentation.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 10. READING LIST VIEW -->
+    <div id="view-reading" class="route-view subpage-container">
+      <h2 class="subpage-title">Reading List</h2>
+      <div class="books-showcase-grid">
+        
+        <div class="book-card-item">
+          <div class="book-cover-art" style="background: linear-gradient(135deg, #311013 0%, #1e1b4b 100%);">📖</div>
+          <div class="book-details">
+            <h3 class="book-title">Ghost in the Wires</h3>
+            <p class="book-author">Kevin D. Mitnick</p>
+            <p class="book-synopsis">The fascinating memoir of the world's most famous hacker, highlighting social engineering tactics and digital escapades.</p>
+          </div>
+        </div>
+
+        <div class="book-card-item">
+          <div class="book-cover-art" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">📖</div>
+          <div class="book-details">
+            <h3 class="book-title">Atomic Habits</h3>
+            <p class="book-author">James Clear</p>
+            <p class="book-synopsis">A practical guide on how to build positive daily systems, break bad routines, and achieve compounded success.</p>
+          </div>
+        </div>
+
+        <div class="book-card-item">
+          <div class="book-cover-art" style="background: linear-gradient(135deg, #022c22 0%, #111827 100%);">📖</div>
+          <div class="book-details">
+            <h3 class="book-title">The Cuckoo's Egg</h3>
+            <p class="book-author">Clifford Stoll</p>
+            <p class="book-synopsis">A classic digital detective story detailing the tracking of a computer spy inside a university system.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 11. BLOGS LIST VIEW -->
+    <div id="view-blogs" class="route-view subpage-container">
+      <h2 class="subpage-title">Technical Blogs</h2>
+      <div class="blogs-grid">
+        
+        <div class="blog-card-item">
+          <div class="blog-visual-tag" style="background: linear-gradient(135deg, #311013 0%, #111827 100%);">📝</div>
+          <div class="blog-body">
+            <span class="blog-date">March 2026</span>
+            <h3 class="blog-item-title">Phishing URL Detection using Machine Learning</h3>
+            <p class="blog-snippet">An analysis of how URL tokens, lexical flags, and NLP vectors can identify phishing scams with Random Forest algorithms.</p>
+            <a href="https://github.com/Sharmadotcom" target="_blank" rel="noopener" class="blog-link">Read Article on Medium ↗</a>
+          </div>
+        </div>
+
+        <div class="blog-card-item">
+          <div class="blog-visual-tag" style="background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%);">📝</div>
+          <div class="blog-body">
+            <span class="blog-date">January 2026</span>
+            <h3 class="blog-item-title">Designing Secure AES Password Managers in Flask</h3>
+            <p class="blog-snippet">Examining password reuse detection, cryptographic salting, session management, and secure vaults against threat models.</p>
+            <a href="https://github.com/Sharmadotcom" target="_blank" rel="noopener" class="blog-link">Read Article on Dev.to ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 12. CONTACT / CONNECT VIEW -->
+    <div id="view-contact" class="route-view subpage-container">
+      <div class="contact-page-wrapper">
+        <h2 class="contact-page-title">Let's Connect</h2>
+        <p class="contact-page-sub">Select an avenue to reach me. I am open to technical dialogues, project evaluations, and internship inquiries.</p>
+        
+        <div class="contact-channels-grid">
+          
+          <a href="mailto:sharmasarvesh390@gmail.com" class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <h3>Email</h3>
+            <p>sharmasarvesh390@gmail.com</p>
+          </a>
+
+          <a href="https://www.linkedin.com/in/sarvesh-sharma-333b142b0/" target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </div>
+            <h3>LinkedIn</h3>
+            <p>sarvesh-sharma-333b142b0</p>
+          </a>
+
+          <a href="https://github.com/Sharmadotcom" target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </div>
+            <h3>GitHub</h3>
+            <p>Sharmadotcom</p>
+          </a>
+
+          <a href="tel:+918010229619" class="channel-card">
+            <div class="channel-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <h3>Phone</h3>
+            <p>+91 8010229619</p>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li class="footer-link"><a href="#/profile">Home Dashboard</a></li>
+        <li class="footer-link"><a href="#/projects">Projects Grid</a></li>
+        <li class="footer-link"><a href="#/skills">Technical Skills</a></li>
+        <li class="footer-link"><a href="#/certifications">Credentials</a></li>
+        <li class="footer-link"><a href="#/experience">Timeline</a></li>
+        <li class="footer-link"><a href="#/academic">Academic Stats</a></li>
+        <li class="footer-link"><a href="#/contact">Connect</a></li>
+      </ul>
+      <p class="footer-copyright">© 2026 Sarvesh Sharma · VIT Bhopal University · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== SHARED CERTIFICATE MODAL VIEW ========== -->
+  <div class="cert-modal-overlay" id="certModal">
+    <div class="cert-modal">
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close modal">✕</button>
+      <img id="certModalImg" src="" alt="Certificate View">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
