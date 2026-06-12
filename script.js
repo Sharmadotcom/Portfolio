@@ -71,6 +71,14 @@
       gif: 'https://i.giphy.com/13HgwGsXF0aiGY.gif',
       gradient: 'linear-gradient(135deg, #090d16 0%, #311013 100%)'
     },
+    focus: {
+      title: 'Current Focus',
+      category: 'In Progress',
+      desc: 'Microsoft SC-100 certification study and the Passify secure vault project.',
+      hash: '#/focus',
+      gif: 'https://i.giphy.com/d3YHWXviXzEvBk6Q.gif',
+      gradient: 'linear-gradient(135deg, #111827 0%, #1e1b4b 100%)'
+    },
     contact: {
       title: 'Contact Channels',
       category: 'Connect',
@@ -270,7 +278,7 @@
     if (persona === 'recruiter') {
       rows.push({
         title: "Today's Top Picks for Recruiter",
-        cards: ['academic', 'skills', 'experience', 'certifications', 'projects', 'contact']
+        cards: ['academic', 'skills', 'focus', 'experience', 'certifications', 'projects', 'contact']
       });
       rows.push({
         title: "Continue Watching",
@@ -279,7 +287,7 @@
     } else if (persona === 'developer') {
       rows.push({
         title: "Today's Top Picks for Developer",
-        cards: ['skills', 'projects', 'blogs', 'certifications', 'experience', 'contact']
+        cards: ['skills', 'focus', 'projects', 'blogs', 'certifications', 'experience', 'contact']
       });
       rows.push({
         title: "Continue Watching",
@@ -288,7 +296,7 @@
     } else if (persona === 'stalker') {
       rows.push({
         title: "Today's Top Picks for Stalker",
-        cards: ['academic', 'contact', 'blogs', 'music', 'reading']
+        cards: ['academic', 'focus', 'contact', 'blogs', 'music', 'reading']
       });
       rows.push({
         title: "Continue Watching",
@@ -298,7 +306,7 @@
       // adventurer
       rows.push({
         title: "Today's Top Picks for Adventurer",
-        cards: ['experience', 'projects', 'certifications', 'academic', 'skills', 'contact']
+        cards: ['experience', 'projects', 'focus', 'certifications', 'academic', 'skills', 'contact']
       });
       rows.push({
         title: "Continue Watching",

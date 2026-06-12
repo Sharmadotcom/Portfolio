@@ -480,36 +480,20 @@
 
     <!-- 9. MUSIC GRID VIEW -->
     <div id="view-music" class="route-view subpage-container">
-      <h2 class="subpage-title">Coding Playlists</h2>
-      <div class="music-albums-grid">
-        
-        <div class="album-card">
-          <div class="album-cover" style="background: linear-gradient(135deg, #111827 0%, #1e1b4b 100%);">🎧</div>
-          <div class="album-details">
-            <h3 class="album-title">Cyberpunk Synthwave</h3>
-            <p class="album-artist">Electronic / Synth</p>
-            <span class="album-desc">High-tempo beats for deep-focus shell scripting and network penetration testing sessions.</span>
-          </div>
+      <h2 class="subpage-title">Coding Playlists <span style="font-size: 1.2rem; color: #fa243c; vertical-align: middle; margin-left: 10px; font-family: var(--font-inter); font-weight: 600;"> Music Connected</span></h2>
+      
+      <div style="margin-bottom: 35px; display: flex; align-items: center; gap: 15px; background: rgba(250, 36, 60, 0.05); border: 1px solid rgba(250, 36, 60, 0.2); padding: 15px 20px; border-radius: 6px;">
+        <span style="font-size: 1.5rem;"></span>
+        <div style="text-align: left;">
+          <h4 style="margin: 0; color: #fff; font-size: 0.95rem; font-family: var(--font-inter);">Synced with Apple Music Account</h4>
+          <p style="margin: 3px 0 0 0; color: var(--nf-gray); font-size: 0.8rem; font-family: var(--font-inter);">Stream curated coding &amp; focus soundscapes directly from your Apple Music subscription.</p>
         </div>
+      </div>
 
-        <div class="album-card">
-          <div class="album-cover" style="background: linear-gradient(135deg, #090d16 0%, #064e3b 100%);">🎵</div>
-          <div class="album-details">
-            <h3 class="album-title">Lo-Fi Coding Loops</h3>
-            <p class="album-artist">Chillhop / Instrumental</p>
-            <span class="album-desc">Relaxed background lo-fi tracks, ideal for debugging algorithms and documentation.</span>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-cover" style="background: linear-gradient(135deg, #111827 0%, #311013 100%);">🔊</div>
-          <div class="album-details">
-            <h3 class="album-title">Dark Ambient Drone</h3>
-            <p class="album-artist">Ambient / Atmospheric</p>
-            <span class="album-desc">Immersive and non-distracting atmospheric soundscapes for reading technical documentation.</span>
-          </div>
-        </div>
-
+      <div class="apple-music-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/beatstrumentals/pl.f5d7f55a73e6488d9c2f5e74c20aa228"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/pure-focus/pl.157fb6c9fb8041c38fa531b7ec17f54c"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/coding-focus/pl.u-mJy81t4z53X2"></iframe>
       </div>
     </div>
 
@@ -542,6 +526,49 @@
             <h3 class="book-title">The Cuckoo's Egg</h3>
             <p class="book-author">Clifford Stoll</p>
             <p class="book-synopsis">A classic digital detective story detailing the tracking of a computer spy inside a university system.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 13. CURRENT FOCUS VIEW -->
+    <div id="view-focus" class="route-view subpage-container">
+      <h2 class="subpage-title">Current Focus</h2>
+      <div class="music-split-layout">
+        
+        <!-- Left: Certification Study -->
+        <div class="music-left-col">
+          <h2 class="subpage-title-mini">Certification In Progress</h2>
+          <div class="focus-card">
+            <div class="focus-header-flex">
+              <img class="focus-badge-img" src="assets/certs/sc100_badge.png" alt="Microsoft SC-100 Cybersecurity Architect Badge">
+              <div class="focus-title-group">
+                <h3>Microsoft Certified: SC-100</h3>
+                <span class="focus-subtitle">Cybersecurity Architect Expert</span>
+              </div>
+            </div>
+            <p class="focus-desc">
+              Currently preparing for the SC-100 Cybersecurity Architect Expert certification to design zero-trust architectural strategies, SOC architectures, active directory security mappings, identity management controls, and cloud security governance policies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Active GitHub Project -->
+        <div class="music-right-col">
+          <h2 class="subpage-title-mini">Active GitHub Project</h2>
+          <div class="focus-card">
+            <div class="focus-header-flex">
+              <div class="focus-title-group">
+                <h3>Passify — AES-256 Secure Vault</h3>
+                <span class="focus-subtitle">Active Repository · Python &amp; Flask</span>
+              </div>
+            </div>
+            <p class="focus-desc">
+              Developing a secure, AES-encrypted password vault that features credentials safety and reuse indicators, dashboard summaries, strength generators, and integrated compromise warning alerts.
+            </p>
+            <img class="focus-screenshot-img" src="assets/passify_preview.png" alt="Passify Secure Vault Dashboard Mockup">
+            <a href="https://github.com/Sharmadotcom/Passify" target="_blank" rel="noopener" class="btn-card primary" style="align-self: flex-start; margin-top: 10px;">View GitHub Repository ↗</a>
           </div>
         </div>
 
@@ -660,6 +687,7 @@
         <li class="footer-link"><a href="#/projects">Projects Grid</a></li>
         <li class="footer-link"><a href="#/skills">Technical Skills</a></li>
         <li class="footer-link"><a href="#/certifications">Credentials</a></li>
+        <li class="footer-link"><a href="#/focus">Current Focus</a></li>
         <li class="footer-link"><a href="#/experience">Timeline</a></li>
         <li class="footer-link"><a href="#/academic">Academic Stats</a></li>
         <li class="footer-link"><a href="#/contact">Connect</a></li>
