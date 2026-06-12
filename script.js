@@ -64,9 +64,9 @@
       gradient: 'linear-gradient(135deg, #311013 0%, #022c22 100%)'
     },
     blogs: {
-      title: 'Technical Blogs',
+      title: 'Blogs I Suggest',
       category: 'Blogs',
-      desc: 'ML Phishing filters and AES-encrypted database guides.',
+      desc: 'Curated cybersecurity insights, threat intelligence, and security guides.',
       hash: '#/blogs',
       gif: 'https://i.giphy.com/13HgwGsXF0aiGY.gif',
       gradient: 'linear-gradient(135deg, #090d16 0%, #311013 100%)'
@@ -110,7 +110,7 @@
       desc: 'Backend builder constructing AI text classifiers, AES cryptography managers, and security automation scripts. Specializing in Python, Flask, SQL databases, and Git version controls.',
       playText: 'Projects Grid',
       playHash: '#/projects',
-      infoText: 'Blogs',
+      infoText: 'Blogs I Suggest',
       infoHash: '#/blogs'
     },
     stalker: {
