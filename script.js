@@ -76,7 +76,7 @@
       category: 'In Progress',
       desc: 'Microsoft SC-100 certification study and the Passify secure vault project.',
       hash: '#/focus',
-      gif: 'https://i.giphy.com/d3YHWXviXzEvBk6Q.gif',
+      gif: 'https://i.giphy.com/nA7xqFVD1w5A7s69D9.gif',
       gradient: 'linear-gradient(135deg, #111827 0%, #1e1b4b 100%)'
     },
     contact: {
@@ -91,10 +91,10 @@
 
   // Avatars mapping
   const avatars = {
-    recruiter: 'assets/avatars/recruiter.png?v=2',
-    developer: 'assets/avatars/developer.png?v=2',
-    stalker: 'assets/avatars/stalker.png?v=2',
-    adventurer: 'assets/avatars/adventurer.png?v=2'
+    recruiter: 'assets/avatars/recruiter.png?v=3',
+    developer: 'assets/avatars/developer.png?v=3',
+    stalker: 'assets/avatars/stalker.png?v=3',
+    adventurer: 'assets/avatars/adventurer.png?v=3'
   };
 
   // Billboard details database
@@ -515,7 +515,10 @@
   });
 
   // ========== ROUTER BINDINGS ==========
-  window.addEventListener('hashchange', handleRoute);
+  window.addEventListener('hashchange', () => {
+    handleRoute();
+  });
+  
   document.addEventListener('DOMContentLoaded', () => {
     handleRoute();
     checkNavbarScrolled();

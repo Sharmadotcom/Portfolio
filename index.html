@@ -39,7 +39,7 @@
       <div class="nav-right">
         <a href="#/browse" class="profile-nav-btn" id="profileNavBtn" title="Switch Profile">
           <div class="profile-nav-avatar">
-            <img id="currentNavAvatar" src="assets/avatars/recruiter.png?v=2" alt="Active Profile">
+            <img id="currentNavAvatar" src="assets/avatars/recruiter.png?v=3" alt="Active Profile">
           </div>
         </a>
       </div>
@@ -56,25 +56,25 @@
         <div class="profile-list">
           <a href="#/profile/recruiter" class="profile-card" id="card-recruiter">
             <div class="profile-avatar-wrapper">
-              <img src="assets/avatars/recruiter.png?v=2" alt="Recruiter Avatar">
+              <img src="assets/avatars/recruiter.png?v=3" alt="Recruiter Avatar">
             </div>
             <span class="profile-name">Recruiter</span>
           </a>
           <a href="#/profile/developer" class="profile-card" id="card-developer">
             <div class="profile-avatar-wrapper">
-              <img src="assets/avatars/developer.png?v=2" alt="Developer Avatar">
+              <img src="assets/avatars/developer.png?v=3" alt="Developer Avatar">
             </div>
             <span class="profile-name">Developer</span>
           </a>
           <a href="#/profile/stalker" class="profile-card" id="card-stalker">
             <div class="profile-avatar-wrapper">
-              <img src="assets/avatars/stalker.png?v=2" alt="Stalker Avatar">
+              <img src="assets/avatars/stalker.png?v=3" alt="Stalker Avatar">
             </div>
             <span class="profile-name">Stalker</span>
           </a>
           <a href="#/profile/adventurer" class="profile-card" id="card-adventurer">
             <div class="profile-avatar-wrapper">
-              <img src="assets/avatars/adventurer.png?v=2" alt="Adventurer Avatar">
+              <img src="assets/avatars/adventurer.png?v=3" alt="Adventurer Avatar">
             </div>
             <span class="profile-name">Adventurer</span>
           </a>
@@ -109,6 +109,22 @@
               <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
               <span>Info</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spotlight Profile Brief -->
+      <section class="home-spotlight-section">
+        <div class="home-spotlight-card">
+          <div class="spotlight-avatar-wrapper">
+            <img src="assets/profile.png?v=3" alt="Sarvesh Sharma">
+          </div>
+          <div class="spotlight-info">
+            <span class="spotlight-tag">Profile Spotlight</span>
+            <h2 class="spotlight-title">About Sarvesh Sharma</h2>
+            <p class="spotlight-desc">
+              B.Tech student in CSE (Cyber Security &amp; Digital Forensics) at VIT Bhopal University. Specialized in zero-trust architectures, secure backend engineering, and digital threat forensics. Scroll down to browse my curated rows.
+            </p>
           </div>
         </div>
       </section>
@@ -480,20 +496,75 @@
 
     <!-- 9. MUSIC GRID VIEW -->
     <div id="view-music" class="route-view subpage-container">
-      <h2 class="subpage-title">Coding Playlists <span style="font-size: 1.2rem; color: #fa243c; vertical-align: middle; margin-left: 10px; font-family: var(--font-inter); font-weight: 600;"> Music Connected</span></h2>
-      
-      <div style="margin-bottom: 35px; display: flex; align-items: center; gap: 15px; background: rgba(250, 36, 60, 0.05); border: 1px solid rgba(250, 36, 60, 0.2); padding: 15px 20px; border-radius: 6px;">
-        <span style="font-size: 1.5rem;"></span>
-        <div style="text-align: left;">
-          <h4 style="margin: 0; color: #fff; font-size: 0.95rem; font-family: var(--font-inter);">Synced with Apple Music Account</h4>
-          <p style="margin: 3px 0 0 0; color: var(--nf-gray); font-size: 0.8rem; font-family: var(--font-inter);">Stream curated coding &amp; focus soundscapes directly from your Apple Music subscription.</p>
+      <div class="apple-music-profile-header">
+        <div class="profile-header-bg"></div>
+        <div class="profile-header-content">
+          <div class="profile-avatar-container">
+            <img src="assets/profile.png?v=3" alt="Sarvesh Sharma" class="profile-avatar-img">
+            <div class="profile-avatar-ring"></div>
+          </div>
+          <div class="profile-info-container">
+            <div class="profile-badge">
+              <span class="badge-icon"></span>
+              <span class="badge-text">Apple Music Profile</span>
+            </div>
+            <h1 class="profile-display-name">Sarvesh Sharma</h1>
+            <p class="profile-username">@sarvesh_sharma</p>
+            <p class="profile-bio">Curated focus vibes, cosmic ambient synth loops, and deep-coding soundscapes directly from my Apple Music library.</p>
+            <div class="profile-actions">
+              <a href="https://music.apple.com/profile/sarvesh_sharma" target="_blank" rel="noopener" class="profile-btn-primary">
+                <span>View Apple Music Profile</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="apple-music-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/beatstrumentals/pl.f5d7f55a73e6488d9c2f5e74c20aa228"></iframe>
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/pure-focus/pl.157fb6c9fb8041c38fa531b7ec17f54c"></iframe>
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/coding-focus/pl.u-mJy81t4z53X2"></iframe>
+      <!-- Playlists Grid -->
+      <div class="music-albums-grid">
+        
+        <!-- Playlist 1: Jind Universe -->
+        <div class="album-card">
+          <div class="album-cover-wrapper">
+            <img src="assets/playlist_jind.png" alt="Jind Universe">
+          </div>
+          <div class="album-details">
+            <span class="album-artist">Curated Universe</span>
+            <h3 class="album-title">Jind Universe</h3>
+            <span class="album-desc">Curated atmospheric and mood tracks, linking directly to stream from your Apple Music library.</span>
+            <a href="https://music.apple.com/library/playlist/p.kGoq3VdFdADK7dM" target="_blank" rel="noopener" class="btn-card primary" style="display: block; width: 100%; text-align: center; margin-top: 15px;">Listen on Apple Music ↗</a>
+          </div>
+        </div>
+
+        <!-- Playlist 2: Punjabi -->
+        <div class="album-card">
+          <div class="album-cover-wrapper">
+            <img src="assets/playlist_punjabi.png" alt="Punjabi">
+          </div>
+          <div class="album-details">
+            <span class="album-artist">High Energy</span>
+            <h3 class="album-title">Punjabi</h3>
+            <span class="album-desc">Vibrant and energetic Punjabi hits for focus, flow, and high-energy coding sessions.</span>
+            <a href="https://music.apple.com/library/playlist/p.pmrA3M2feaB7qe9" target="_blank" rel="noopener" class="btn-card primary" style="display: block; width: 100%; text-align: center; margin-top: 15px;">Listen on Apple Music ↗</a>
+          </div>
+        </div>
+
+        <!-- Playlist 3: 🌌 -->
+        <div class="album-card">
+          <div class="album-cover-wrapper">
+            <img src="assets/playlist_galaxy.png" alt="🌌">
+          </div>
+          <div class="album-details">
+            <span class="album-artist">Ambient Focus</span>
+            <h3 class="album-title">🌌</h3>
+            <span class="album-desc">Chill spacey ambient synthwave and cosmic loops for deep concentration work.</span>
+            <a href="https://music.apple.com/library/playlist/p.5PG54aKhb7Y2obg" target="_blank" rel="noopener" class="btn-card primary" style="display: block; width: 100%; text-align: center; margin-top: 15px;">Listen on Apple Music ↗</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
